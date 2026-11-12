@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mightyCode for Muse</title>
+<meta http-equiv="Cache-Control" content="no-store">
+<link rel="icon" type="image/png" href="favicon.png?v=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=1">
+<link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+<header>
+  <div class="brand">mightyCode for Muse <span class="sub">Claude Code × ローカルLLM</span></div>
+  <div class="status">
+    <span id="modelDot" class="dot dot-off"></span><span id="modelLabel">接続中</span>
+    <span id="tokenLabel" class="tokens"></span>
+    <span id="approvalLabel" class="pending"></span>
+  </div>
+</header>
+<section class="sessionbar">
+  <label class="folder">作業フォルダ <input id="cwd" type="text" placeholder="/Users/you/project" spellcheck="false"></label>
+  <button id="startBtn" class="primary">セッション開始</button>
+  <label class="auto"><input type="checkbox" id="autoApprove">このセッションは自動承認</label>
+  <span class="spacer"></span>
+  <button id="stopBtn" class="danger" disabled>停止</button>
+  <button id="quitBtn" class="quiet" title="モデルサーバーごと終了します">アプリ終了</button>
+</section>
+<section class="sessions" id="sessionsBar" hidden>
+  <span class="slabel">稼働中のセッション</span>
+  <div id="sessionList" class="slist"></div>
+</section>
+<div id="banner" class="banner" hidden></div>
+<main id="log"></main>
+<div id="turnStatus" class="turnstatus"></div>
+<footer>
+  <textarea id="input" rows="3" placeholder="セッションを開始すると入力できます" disabled></textarea>
+  <button id="sendBtn" class="primary" disabled>送信</button>
+  <span class="hint">Enter で送信　Shift+Enter で改行</span>
+</footer>
+<script src="app.js?v=5"></script>
+</body>
+</html>
